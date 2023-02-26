@@ -5,20 +5,17 @@ services:
     ports:
       - '6379:6379'
   web1:
-    build: ./web
-    dockerfile: Dockerfile
+    image: 'paowick/swarm01_web:1.0'
     hostname: web1
     ports:
       - '81:5000'
   web2:
-    build: ./web
-    dockerfile: Dockerfile
+    image: 'paowick/swarm01_web:1.0'
     hostname: web2
     ports:
       - '82:5000'
   nginx:
-    build: ./nginx
-    # image: nginx
+    image: 'paowick/swarm01_nginx:1.0'
     ports:
     - '80:80'
     depends_on:
