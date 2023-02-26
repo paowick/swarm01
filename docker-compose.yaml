@@ -4,23 +4,23 @@ services:
     image: 'redislabs/redismod'
     ports:
       - '6379:6379'
-  # web1:
-  #   build: ./web
-  #   dockerfile: Dockerfile
-  #   hostname: web1
-  #   ports:
-  #     - '81:5000'
-  # web2:
-  #   build: ./web
-  #   dockerfile: Dockerfile
-  #   hostname: web2
-  #   ports:
-  #     - '82:5000'
+  web1:
+    build: ./web
+    dockerfile: Dockerfile
+    hostname: web1
+    ports:
+      - '81:5000'
+  web2:
+    build: ./web
+    dockerfile: Dockerfile
+    hostname: web2
+    ports:
+      - '82:5000'
   nginx:
-    # build: ./nginx
-    image: nginx
+    build: ./nginx
+    # image: nginx
     ports:
     - '80:80'
-    # depends_on:
-    # - web1
-    # - web2
+    depends_on:
+    - web1
+    - web2
