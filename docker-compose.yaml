@@ -2,22 +2,16 @@ version: '3'
 services:
   redis:
     image: 'redislabs/redismod'
-    ports:
-      - '6379:6379'
   web1:
     image: 'paowick/swarm01_web:1.0'
     hostname: web1
-    ports:
-      - '81:5000'
   web2:
     image: 'paowick/swarm01_web:1.0'
     hostname: web2
-    ports:
-      - '82:5000'
   nginx:
     image: 'paowick/swarm01_nginx:1.0'
     ports:
-    - '80:80'
+    - '81:80'
     depends_on:
     - web1
     - web2
