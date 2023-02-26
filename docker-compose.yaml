@@ -2,16 +2,47 @@ version: '3'
 services:
   redis:
     image: 'redislabs/redismod'
+    networks:
+      - backend
   web1:
-    image: 'paowick/swarm01_web:1.0'
+    image: 'paowick/swarm01_web:1.1'
     hostname: web1
+    networks:
+      - backend
   web2:
-    image: 'paowick/swarm01_web:1.0'
+    image: 'paowick/swarm01_web:1.1'
     hostname: web2
+    networks:
+      - backend
   nginx:
-    image: 'paowick/swarm01_nginx:1.0'
-    ports:
-    - '80:80'
+    image: 'paowick/swarm01_nginx:1.1'
     depends_on:
     - web1
     - web2
+    networks:
+      - backend
+      - webproxy
+    deploy:
+        replicas: 1
+        labels:
+          - traefik.docker.network=webproxy
+          - traefik.enable=true
+          - traefik.constraint-label=webproxy
+          - traefik.http.routers.spcn23swarm01-https.entrypoints=websecure
+          - traefik.http.routers.spcn23swarm01-https.rule=Host("spcn23swarm01.xops.ipv9.xyz")
+          - traefik.http.routers.spcn23swarm01-https.tls.certresolver=default
+          - traefik.http.services.spcn23swarm01.loadbalancer.server.port=80
+          - traefik.http.routers.spcn23swarm01-https.tls=true
+        resources:
+          reservations:
+            cpus: '0.1'
+            memory: 10M
+          limits:
+            cpus: '0.4'
+            memory: 250M
+
+networks:
+  webproxy:
+    external: true
+  backend:
+    driver: overlay
