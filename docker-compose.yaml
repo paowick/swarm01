@@ -11,7 +11,7 @@ services:
   nginx:
     image: 'paowick/swarm01_nginx:1.0'
     ports:
-    - '81:80'
+    - '80:80'
     depends_on:
     - web1
     - web2
