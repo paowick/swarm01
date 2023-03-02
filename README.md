@@ -95,6 +95,6 @@ $docker build -t paowick/swarm01_nginx:1.1
 $docker push paowick/swarm01_web:1.1
 $docker push paowick/swarm01_nginx:1.1
 ```
-&emsp; **3**.Deoly with docker-compose in https://portainer.ipv9.me/
+&emsp; **3**.Depoly with docker-compose in https://portainer.ipv9.me/
 
 ***url https://spcn23swarm01.xops.ipv9.me/***
