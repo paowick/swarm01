@@ -71,8 +71,8 @@ networks:
 
 #### Step
 
-&emsp; **1**.clone <ins>*Nginx-Nodejs-Redis porject*</ins> from <ins>*awesome-compose*</ins>
-&emsp; **2**.build image form Dockerfile and push to Docker Hub
+&emsp; **1**.clone <ins>*Nginx-Nodejs-Redis porject*</ins> from <ins>*awesome-compose*</ins>\
+&emsp; **2**.build image form Dockerfile and push to **Docker Hub**
 ```
 .
 ├── README.md
@@ -84,6 +84,16 @@ networks:
     ├──Dockerfile   <--- here!!
     ├── package.json
     └── server.js
+```
+&emsp; build image
+```
+$docker build -t paowick/swarm01_web:1.1 
+$docker build -t paowick/swarm01_nginx:1.1
+```
+&emsp; push image to **Docker Hub**
+```
+$docker push paowick/swarm01_web:1.1
+$docker push paowick/swarm01_nginx:1.1
 ```
 &emsp; **3**.Deoly with docker-compose in https://portainer.ipv9.me/
 
