@@ -201,7 +201,7 @@ networks:
     driver: overlay
 ```
 #### Step 3
-&emsp; Deploy to https://portainer.ipv9.me/\
+&emsp; Deploy to https://portainer.ipv9.me/ \
 &emsp; open [_portainer_](https://portainer.ipv9.me/) select **Stack menu**\
 <img src="./image/stack.jpg">\
 &emsp; select Add Stack\
@@ -212,7 +212,7 @@ networks:
 <img src="./image/deploy.jpg">
 
 # Result 
-&emsp; Url after deploy https://spcn23swarm01.xops.ipv9.me/\
-<img src="./image/result.jpg">
+&emsp; Url after deploy https://spcn23swarm01.xops.ipv9.me/ \
+<img src="./image/result.jpg">\
 &emsp; On every refash a page the number of visits was ***keep increasing*** 
 &emsp; And web will change between <u>web1</u> and <u>web2</u> because it's a ***load balancer***
