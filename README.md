@@ -7,7 +7,7 @@ This repo reference from ***https://github.com/docker/awesome-compose/tree/maste
 ## Result url 
 ***https://spcn23swarm01.xops.ipv9.me/***
 
-Project structure:
+### Project structure:
 ```
 .
 ├── README.md
@@ -20,7 +20,7 @@ Project structure:
     ├── package.json
     └── server.js
 ```
-[_docker-compose.yaml_](docker-compose.yaml)
+### [_docker-compose.yaml_](docker-compose.yaml)
 ```
 
 version: '3'
@@ -201,14 +201,14 @@ networks:
     driver: overlay
 ```
 #### Step 3
-&emsp; Deploy to https://portainer.ipv9.me/\
-- open [_portainer_](https://portainer.ipv9.me/) select **Stack menu**  \
+&emsp; Deploy to https://portainer.ipv9.me/
+&emsp; open [_portainer_](https://portainer.ipv9.me/) select **Stack menu**  
 <img src="./image/stack.jpg">
-- select Add Stack
+&emsp; select Add Stack
 <img src="./image/addstack.jpg">
-- Copy Scripts inside [_docker-compose.yaml_](docker-compose.yaml) file insert them in Web editor Text box Entry Stack name and set your enviroment variable "APPNAME" or you can change by yourself in scripts
+&emsp; Copy Scripts inside [_docker-compose.yaml_](docker-compose.yaml) file insert them in Web editor Text box Entry Stack name and set your enviroment variable "APPNAME" or you can change by yourself in scripts
 <img src="./image/cp.jpg">
-- and then deploy
+&emsp; and then deploy
 <img src="./image/deploy.jpg">
 
 # Result 
